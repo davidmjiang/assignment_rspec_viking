@@ -1,3 +1,4 @@
+Philip and David
 assignment_rspec_ruby_sprint
 ============================
 
