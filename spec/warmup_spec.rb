@@ -21,7 +21,9 @@ describe Warmup do
   end
 
   describe "#calls_some_methods" do
-    let(:string) { double(empty?: false, upcase!: "HELLO", reverse!: "OLLEH") }
+     let(:loud_string){double(reverse!:"OLLEH")}
+     let(:string) { double(empty?: false, upcase!: loud_string, reverse!: "OLLEH") }
+
 
     it "the string receieves the #upcase method" do
       expect(string).to receive(:upcase!)
@@ -29,7 +31,7 @@ describe Warmup do
     end
 
     it "the string receieves the #reverse method" do
-      expect(string).to receive(:reverse!)
+      expect(loud_string).to receive(:reverse!)
       warmup.calls_some_methods(string)
     end
 
